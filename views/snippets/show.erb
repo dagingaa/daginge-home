@@ -1,0 +1,15 @@
+<% @snippets.each do |snippet| %>
+  <div class="post">
+    <p style="float: right;" class="quiet">Created at <%= snippet.created_at %></p>
+    <h1><%= snippet.name %></h1>
+    <%= snippet.description %>
+    <h2>Snippet</h2>
+    <%= snippet.content %>
+  </div>
+<% end %>
+<% content_for :sidebar do %>
+  <div class="widget">
+    <h1>Code snippets</h1>
+    <p>Code snippets are meant to share small pieces of code I write to do nice things. Nothing more or less.</p>
+  </div>
+<% end %>

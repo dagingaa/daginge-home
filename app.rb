@@ -1,7 +1,9 @@
 require 'rubygems'
 require 'compass' #must be loaded before sinatra
 require 'sinatra'
+require 'sinatra/content_for'
 require 'erb'    #must be loaded after sinatra
+require './database/models'
 
 # set sinatra's variables
 set :app_file, __FILE__
@@ -21,4 +23,9 @@ end
 
 get '/' do
   erb :index
+end
+
+get '/snippets' do
+  @snippets = Snippet.order("created_at DESC")
+  erb :"snippets/show"
 end
