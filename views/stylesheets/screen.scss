@@ -1,0 +1,169 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+@import "compass";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+
+// Import the non-default scaffolding module.
+//@import "blueprint/scaffolding";
+
+// To generate css equivalent to the blueprint css but with your
+// configuration applied, uncomment:
+@include blueprint;
+
+// fonts
+@include font-face("Nobile", font-files("/fonts/nobile/nobile-webfont.woff", woff, "/fonts/nobile/nobile-webfont.ttf", truetype, "/fonts/nobile/nobile-webfont.svg", svg));
+@include font-face("Nobile Bold", font-files("/fonts/nobile/nobile_bold-webfont.woff", woff, "/fonts/nobile/nobile_bold-webfont.ttf", truetype, "/fonts/nobile/nobile_bold-webfont.svg", svg));
+
+// fancy-type
+body {
+  font-family: "Nobile", Helvetica, Arial;
+  background-color: white;
+  @include background-image(linear-gradient(darken(white,7%), white));
+  background-repeat:repeat-x;
+}
+
+a, a:hover, a:active, a:visited {
+  color: black;
+}
+
+header {
+  a, a:hover, a:active, a:visited {
+    color: white;
+  }
+}
+
+
+b, strong {
+  font-family: "Nobile Bold";
+  font-weight: bold;
+}
+
+// default overrides
+$header-background: #2e2e2e;
+$header-font: #fff;
+$text-color: #fff;
+$default-box-shadow-color: darken($header-background, 10%);
+$default-text-shadow-color: darken($default-box-shadow-color, 10%);
+$default-text-shadow-blur: 5px;
+$default-text-shadow-v-offset: 2px;
+
+.post {
+  background-color: darken(white, 2%);
+  padding: 2em;
+  @include single-box-shadow(rgba(black,0.4), 0px, 0px, 3px, 1px, inset);
+  @include border-radius(5px);
+  margin-bottom: 2em;
+}
+
+.widget {
+  background-color: $header-background;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  @include single-box-shadow(rgba(black,0.7), 0px, 0px, 3px, 1px, inset);
+  @include border-radius(5px);
+  p {
+    color: $text-color;
+  }
+  h1 {
+    color: $text-color;
+    @include single-text-shadow;
+  }
+}
+
+.construction-box {
+  @include box-shadow(rgba($default-box-shadow-color, 0.1) 0 0 0px, rgba(black,0.5) 0 0 3px 1px inset);
+  margin-top: 10px;
+  background-color: $header-background;
+  @include border-radius(15px);
+  p {
+    font-size: 3em;
+    color: $text-color;
+    text-align: center;
+    @include single-text-shadow;
+  }
+}
+
+.top {
+  margin-top: 2%;
+}
+
+header {
+  background-color: $header-background;
+  padding: 10px 0 0 10px;
+  border-bottom: 7px solid darken($header-background, 10%);
+  @include background-image(linear-gradient($header-background, darken($header-background,7%)));
+  h1 {
+    color: $header-font;
+    display: inline;
+    @include single-text-shadow;
+  }
+  ul {
+    @include inline-block-list-container;
+    display: inline;
+    color: $header-font;
+    text-transform: uppercase;
+    margin-left: 70px;
+    li {
+      $nav-button-color: darken($header-background, 5%);
+      background-color: $nav-button-color;
+      padding: 0.5em;
+      margin-bottom: 1.0em;
+      @include inline-block-list-item(10px);
+      @include single-box-shadow(rgba(black,0.5), 0px, 0px, 2px, 1px, inset);
+      &.selected {
+        background-color: darken($header-background, 20%);
+        @include single-box-shadow(rgba(black,0.5), 0px, 0px, 2px, 1px, inset);
+      }
+      &:hover {
+        background-color: darken($nav-button-color, 5%);
+      }
+      a {
+        @include hover-link;
+        color: white;
+        display: block;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+div.center {
+  margin: auto;
+  text-align: center;
+}
+
+img.fancy {
+  
+}
+
+img.rotate {
+  @include rotate(180deg)
+}
+
+table.about tbody th {
+  font-family: "Nobile Bold";
+  font-weight: bold;
+  vertical-align: top;
+  width: 25%;
+}
+
+h6 {
+  font-family: "Nobile Bold";
+  font-weight: bold;
+}
+
+div.hoverable {
+  &:hover {
+    background-color: darken(white, 8%);
+    cursor: pointer;
+  }
+}
+                                           
