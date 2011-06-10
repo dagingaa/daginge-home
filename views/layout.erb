@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>daginge.com</title>
+    <meta name="viewport" content="width=950, initial-scale=1">
+    <meta charset="utf-8" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    <link href="/javascripts/prettify/prettify.css" type="text/css" rel="stylesheet" />
+    <!--[if lt IE 8]>
+    <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <script type="text/javascript" src="/javascripts/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="/javascripts/application.js"></script>
+    <script type="text/javascript" src="/javascripts/prettify/prettify.js"></script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-7814313-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+
+</script>
+  </head>
+  <body onload="prettyPrint()" >
+    <header>
+    <h1 id="header">daginge.com</h1>
+    <ul>
+      <li><a href="/">Information</a></li>
+      <li><a href="/snippets">Snippets</a></li>
+    </ul>
+    </header>
+    <div class="container top">
+      <div class="span-16">
+        <%= yield %>
+      </div>
+      <div class="span-8 last">
+        <% yield_content :sidebar %>
+      </div>
+      <footer class="span-24">
+      <p class="quiet">Page built by Dag-Inge Aas using HTML5, CSS3, Compass, Blueprint, SASS and jQuery. Special thanks to famfamfam for Silk Icons and fontsquirrel for custom font. Design and colors by Dag-Inge Aas. Validates <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fdaginge.com%2F">HTML5</a>.</p>
+      </footer>
+
+    </div>
+  </body>
+</html>
