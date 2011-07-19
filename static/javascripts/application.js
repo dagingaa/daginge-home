@@ -7,6 +7,7 @@ $(document).ready(function() {
       }
       else {
         $(this).children(".hideable").slideUp("fast"); 
+        $(this).children(".hideable").addClass("hide");
       }
     });
     $("#header").click(function() {
