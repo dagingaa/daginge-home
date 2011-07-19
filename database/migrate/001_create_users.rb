@@ -4,8 +4,8 @@ class CreateUsers < ActiveRecord::Migration
       t.column :name, :string, :null => false
       t.column :nick, :string, :null => false
       t.column :introduction, :text
-      t.column :hashed_password, :null => false
-      t.column :salt, :null => false
+      t.column :hashed_password, :string, :null => false
+      t.column :salt, :string, :null => false
     end
   end
   def self.down
